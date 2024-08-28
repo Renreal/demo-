@@ -3,10 +3,10 @@ name: Python CI
 on:
   push:
     branches:
-      - main  # Trigger workflow on pushes to the main branch
+      - main 
   pull_request:
     branches:
-      - main  # Trigger workflow on pull requests targeting the main branch
+      - main 
 
 jobs:
   run-script:
@@ -19,8 +19,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'  # Specify the Python version you want to use
+          python-version: '3.8'  
 
       - name: Run Python script
         run: |
-          python test_python.py  # Run the renamed Python file
+          python test_python.py  
