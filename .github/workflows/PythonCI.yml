@@ -3,10 +3,10 @@ name: Python CI
 on:
   push:
     branches:
-      - main 
+      - main  # Trigger workflow on pushes to the main branch
   pull_request:
     branches:
-      - main 
+      - main  # Trigger workflow on pull requests targeting the main branch
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'  
+          python-version: '3.8'  # Specify the Python version you want to use
 
       - name: Install dependencies
         run: |
@@ -29,12 +29,12 @@ jobs:
       - name: Run linting
         run: |
           pip install pylint
-          pylint your_module  # Replace 'your_module' with your actual module or script
+          pylint testPython.py  # Lint the specific Python file
 
       - name: Run tests
         run: |
           pip install pytest
-          pytest --maxfail=1 --disable-warnings -q
+          pytest testPython.py --maxfail=1 --disable-warnings -q  # Run tests on the specific Python file
 
       - name: Build project
         run: |
