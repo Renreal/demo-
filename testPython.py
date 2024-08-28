@@ -1,1 +1,1 @@
-hrjsljl pyhton
+print("hello")
