@@ -30,8 +30,8 @@ jobs:
 
       - name: Run linting
         run: |
-          pylint testPython.py  # Lint the specific Python file
+          pylint test_python.py  # Lint the specific Python file
 
       - name: Run tests
         run: |
-          pytest testPython.py --maxfail=1 --disable-warnings -q  # Run tests on the specific Python file
+          pytest test_python.py --maxfail=1 --disable-warnings -q  # Run tests on the specific Python file
